@@ -1,13 +1,30 @@
+<!DOCTYPE html>
 <html>
-
-  <head>
-
-  
-  </head>
-  <body>
-<li>
-  
-</li>
-    
-  </body>
+<head>
+  <title>Password Protected Links</title>
+  <script>
+    function checkPassword(url) {
+      var password = prompt("Please enter the password:");
+      if (password === "loveyou") {
+        // Password correct, open the URL in a new tab
+        window.open(url, '_blank');
+      } else {
+        // Password incorrect, show an alert
+        alert("Incorrect password!");
+      }
+    }
+  </script>
+</head>
+<body>
+  <ul>
+    <li><a href="#" onclick="checkPassword('Decision_Tree_Final.html');">Decision_Tree_Final</a></li>
+    <li><a href="#" onclick="checkPassword('KNN.html');">KNN</a></li>
+    <li><a href="#" onclick="checkPassword('Kmediods_Means.html');">Kmediods_Means</a></li>
+    <li><a href="#" onclick="checkPassword('LinearReg_iris.html');">LinearReg_iris</a></li>
+    <li><a href="#" onclick="checkPassword('MultiLinearReg_iris.html');">MultiLinearReg_iris</a></li>
+    <li><a href="#" onclick="checkPassword('Naive_Bayes.html');">Naive_Bayes</a></li>
+    <li><a href="#" onclick="checkPassword('index.html');">index</a></li>
+    <li><a href="#" onclick="checkPassword('kmeans_final.html');">kmeans_final</a></li>
+  </ul>
+</body>
 </html>
