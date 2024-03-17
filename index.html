@@ -3,11 +3,57 @@
 <head>
   <title>Password Protected Links</title>
   <script>
-    function checkPassword(url) {
-      var password = prompt("Please enter the password:");
+    var password = ""; // Global variable to store the password
+
+    function checkPasswordAndLoadList() {
+      password = prompt("Please enter the password:");
       if (password === "loveyou") {
-        // Password correct, open the URL in a new tab
-        window.open(url, '_blank');
+        // Password correct, load the list
+        loadList();
+      } else {
+        // Password incorrect, show an alert
+        alert("Incorrect password!");
+        // Clear the list container
+        document.getElementById("listContainer").innerHTML = "";
+      }
+    }
+
+    function loadList() {
+      var listItems = [
+        "Decision_Tree_Final.html",
+        "KNN.html",
+        "Kmediods_Means.html",
+        "LinearReg_iris.html",
+        "MultiLinearReg_iris.html",
+        "Naive_Bayes.html",
+        "index.html",
+        "kmeans_final.html"
+      ];
+
+      var listContainer = document.getElementById("listContainer");
+      var ul = document.createElement("ul");
+
+      listItems.forEach(function(item) {
+        var li = document.createElement("li");
+        var a = document.createElement("a");
+        a.href = "#";
+        a.textContent = item.replace(".html", "");
+        a.onclick = function() {
+          checkPasswordAndOpenLink(item);
+          return false; // Prevent default link behavior
+        };
+        li.appendChild(a);
+        ul.appendChild(li);
+      });
+
+      listContainer.appendChild(ul);
+    }
+
+    function checkPasswordAndOpenLink(link) {
+      var enteredPassword = prompt("Please enter the password:");
+      if (enteredPassword === password) {
+        // Password correct, open the link
+        window.open(link, '_blank');
       } else {
         // Password incorrect, show an alert
         alert("Incorrect password!");
@@ -15,16 +61,7 @@
     }
   </script>
 </head>
-<body>
-  <ul>
-    <li><a href="#" onclick="checkPassword('Decision_Tree_Final.html');">Decision_Tree_Final</a></li>
-    <li><a href="#" onclick="checkPassword('KNN.html');">KNN</a></li>
-    <li><a href="#" onclick="checkPassword('Kmediods_Means.html');">Kmediods_Means</a></li>
-    <li><a href="#" onclick="checkPassword('LinearReg_iris.html');">LinearReg_iris</a></li>
-    <li><a href="#" onclick="checkPassword('MultiLinearReg_iris.html');">MultiLinearReg_iris</a></li>
-    <li><a href="#" onclick="checkPassword('Naive_Bayes.html');">Naive_Bayes</a></li>
-    <li><a href="#" onclick="checkPassword('index.html');">index</a></li>
-    <li><a href="#" onclick="checkPassword('kmeans_final.html');">kmeans_final</a></li>
-  </ul>
+<body onload="checkPasswordAndLoadList()">
+  <div id="listContainer"></div>
 </body>
 </html>
