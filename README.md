@@ -19,7 +19,7 @@
 | Learning Decision Tree                             | [Learning_Decision_Tree_.html](/demo/ai/Learning_Decision_Tree_.html)           |
 | Partial Order Planning (Shoes – Socks problem)     | [Partial_Order_Planning_(Shoes_–_Socks_problem)_.html](/demo/ai/Partial_Order_Planning_(Shoes_–_Socks_problem)_.html) |
 | Missiles Crime Problem                             | [Missiles_crime_problem_.html](/demo/ai/Missiles_crime_problem_.html)           |
-| First Order Logic (FOL)                           | [First_Order_Logic_(FOL)_.html](/demo/ai/First_Order_Logic_(FOL)_.html)         |
+| First Order Logic (FOL)| [First_Order_Logic_(FOL).html](ai/First_Order_Logic_(FOL)_.html)         |
 | Multi Agent Environment – Chess board problem      | [Multi_Agent_Environment_–_Chess_board_problem_.html](/demo/ai/Multi_Agent_Environment_–_Chess_board_problem_.html) |
 | Implementation of Alpha Beta Pruning               | [Implementation_of_Alpha_Beta_Pruning.html](/demo/ai/Implementation_of_Alpha_Beta_Pruning.html) |
 | Wumpus World                                       | [Wumpus_World.html](/demo/ai/Wumpus_World.html)                                 |
