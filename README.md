@@ -30,4 +30,3 @@
 | 8 Puzzle                                          | [8_Puzzle.html](ai/8_Puzzle.html)                                         |
 | 8 Queen                                           | [8_queen.html](ai/8_queen.html)                                           |
 | Wumpus World                                      | [vaccum_world.html](ai/vaccum_world.html)                                 |
-| Decision Tree    | <a href="ml/Decision_Tree_Final.html" target="_blank">Decision_Tree_Final.html</a>       |
