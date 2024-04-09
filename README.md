@@ -1,16 +1,17 @@
 ## Machine Learning
+
 | Plugin            | README                                                               |
 |-------------------|----------------------------------------------------------------------|
-| Decision Treee    | [file](/demo/ml/Decision_Tree_Final.html)           |
-| KNN               | [file](/demo/ml/KNN.html)                           |
-| Kmediods_Means    | [file](/demo/ml/Kmediods_Means.html)               |
-| LinearReg_iris    | [file](/demo/ml/LinearReg_iris.html)                |
-| MultiLinearReg_iris | [file](/demo/ml/MultiLinearReg_iris.html)          |
-| Naive_Bayes       | [file](/demo/ml/Naive_Bayes.html)                   |
-| export            | [file](/demo/ml/export.html)                        |
-| kmeans_final      | [file](/demo/ml/kmeans_final.html)                  |
+| Decision Tree    | [Decision_Tree_Final.html](/demo/ml/Decision_Tree_Final.html)       |
+| KNN               | [KNN.html](/demo/ml/KNN.html)                                       |
+| Kmediods_Means    | [Kmediods_Means.html](/demo/ml/Kmediods_Means.html)                 |
+| LinearReg_iris    | [LinearReg_iris.html](/demo/ml/LinearReg_iris.html)                   |
+| MultiLinearReg_iris | [MultiLinearReg_iris.html](/demo/ml/MultiLinearReg_iris.html)        |
+| Naive_Bayes       | [Naive_Bayes.html](/demo/ml/Naive_Bayes.html)                       |
+| export            | [export.html](/demo/ml/export.html)                                 |
+| kmeans_final      | [kmeans_final.html](/demo/ml/kmeans_final.html)                      |
 
-## Artificial Intelligent
+## Artificial Intelligence
 
 | Plugin                                             | README                                                                          |
 |----------------------------------------------------|---------------------------------------------------------------------------------|
@@ -29,4 +30,4 @@
 | 8 Puzzle                                          | [8_Puzzle.html](/demo/ai/8_Puzzle.html)                                         |
 | 8 Queen                                           | [8_queen.html](/demo/ai/8_queen.html)                                           |
 | Wumpus World                                      | [vaccum_world.html](/demo/ai/vaccum_world.html)                                 |
-
+| Decision Tree    | <a href="/demo/ml/Decision_Tree_Final.html" target="_blank">Decision_Tree_Final.html</a>       |
