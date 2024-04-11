@@ -21,9 +21,16 @@
             padding: 10px;
             border-radius: 5px;
             overflow-x: auto;
+            width: 800px;
+            white-space: pre-wrap;
         }
         code {
             font-family: Consolas, monospace;
+        }
+        .code-block {
+            max-width: 800px;
+            margin: 0 auto;
+            overflow-x: auto;
         }
     </style>
 </head>
@@ -33,7 +40,8 @@
 <section>
     <h2>Step 1: Create app.yaml</h2>
     <p>Create a file named <code>app.yaml</code> in your project directory with the following content:</p>
-    <pre><code>
+    <div class="code-block">
+        <pre><code>
 runtime: python27
 api_version: 1
 threadsafe: true
@@ -45,7 +53,8 @@ handlers:
 libraries:
 - name: webapp2
   version: "2.5.2"
-    </code></pre>
+        </code></pre>
+    </div>
 </section>
 
 <!-- Step 2: Create HTML files -->
@@ -53,76 +62,85 @@ libraries:
     <h2>Step 2: Create HTML files</h2>
     <p>Create the following HTML files in your project directory:</p>
     <ul>
-        <li>index.html<code>
-            &lt;html&gt;
-            &lt;head&gt;&lt;/head&gt;
-            &lt;body&gt;
-            &lt;H1&gt; Product Deliver Location &lt;/H1&gt;
-            
-            &lt;form class="Product" id="productform" action="/" method="post"&gt;
-             Location Zip Code:
-             &lt;input  class="Product"
-                 id="productform"
-                 type="text"
-                 name="zipCode"  /&gt;
-             &lt;br&gt;
-            &lt;input  class="Product"
-                 id="productform"
-                 type="submit"
-                 value="submit"  /&gt;
-            &lt;/form&gt;
-            &lt;/body&gt;
-            &lt;/html&gt;    
-        </code> with the form for location input.</li>
-        <li>results.html  for displaying location details.<code>
-            &lt;!DOCTYPE html&gt;
-            &lt;html lang="en"&gt;
-            &lt;head&gt;
-                &lt;meta charset="UTF-8"&gt;
-                &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
-                &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-                &lt;title&gt;Location Details&lt;/title&gt;
-                &lt;style&gt;
-                    body {
-                        font-family: Arial, sans-serif;
-                        margin: 20px;
-                    }
-                    h1 {
-                        color: #333;
-                    }
-                    p {
-                        margin-bottom: 10px;
-                    }
-                    strong {
-                        font-weight: bold;
-                    }
-                &lt;/style&gt;
-            &lt;/head&gt;
-            &lt;body&gt;
-                &lt;h1&gt;Location Details&lt;/h1&gt;
-            
-                {% if post_office %}
-                    &lt;p&gt;&lt;strong&gt;Post Office:&lt;/strong&gt; {{ post_office }}&lt;/p&gt;
-                {% endif %}
-            
-                {% if Name %}
-                    &lt;p&gt;&lt;strong&gt;Name:&lt;/strong&gt; {{ Name }}&lt;/p&gt;
-                {% endif %}
-            
-                {% if block %}
-                    &lt;p&gt;&lt;strong&gt;Block:&lt;/strong&gt; {{ block }}&lt;/p&gt;
-                {% endif %}
-            
-                {% if District %}
-                    &lt;p&gt;&lt;strong&gt;District:&lt;/strong&gt; {{ District }}&lt;/p&gt;
-                {% endif %}
-            
-                {% if not post_office and not Name and not block and not District %}
-                    &lt;p&gt;No data available for the provided zip code.&lt;/p&gt;
-                {% endif %}
-            &lt;/body&gt;
-            &lt;/html&gt;
-        </code></li>
+        <li>index.html
+            <div class="code-block">
+                <pre><code>
+&lt;html&gt;
+&lt;head&gt;&lt;/head&gt;
+&lt;body&gt;
+&lt;H1&gt; Product Deliver Location &lt;/H1&gt;
+
+&lt;form class="Product" id="productform" action="/" method="post"&gt;
+ Location Zip Code:
+ &lt;input  class="Product"
+     id="productform"
+     type="text"
+     name="zipCode"  /&gt;
+ &lt;br&gt;
+&lt;input  class="Product"
+     id="productform"
+     type="submit"
+     value="submit"  /&gt;
+&lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;  
+                </code></pre>
+            </div>
+            with the form for location input.
+        </li>
+        <li>results.html  for displaying location details.
+            <div class="code-block">
+                <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Location Details&lt;/title&gt;
+    &lt;style&gt;
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            margin-bottom: 10px;
+        }
+        strong {
+            font-weight: bold;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Location Details&lt;/h1&gt;
+
+    {% if post_office %}
+        &lt;p&gt;&lt;strong&gt;Post Office:&lt;/strong&gt; {{ post_office }}&lt;/p&gt;
+    {% endif %}
+
+    {% if Name %}
+        &lt;p&gt;&lt;strong&gt;Name:&lt;/strong&gt; {{ Name }}&lt;/p&gt;
+    {% endif %}
+
+    {% if block %}
+        &lt;p&gt;&lt;strong&gt;Block:&lt;/strong&gt; {{ block }}&lt;/p&gt;
+    {% endif %}
+
+    {% if District %}
+        &lt;p&gt;&lt;strong&gt;District:&lt;/strong&gt; {{ District }}&lt;/p&gt;
+    {% endif %}
+
+    {% if not post_office and not Name and not block and not District %}
+        &lt;p&gt;No data available for the provided zip code.&lt;/p&gt;
+    {% endif %}
+&lt;/body&gt;
+&lt;/html&gt;
+                </code></pre>
+            </div>
+        </li>
     </ul>
 </section>
 
@@ -130,7 +148,8 @@ libraries:
 <section>
     <h2>Step 3: Create main.py</h2>
     <p>Create a Python file named <code>main.py</code> with the following content:</p>
-    <pre><code>
+    <div class="code-block">
+        <pre><code>
 import urllib
 import webapp2
 import os
@@ -175,7 +194,8 @@ class MainPage(webapp2.RequestHandler):
             self.response.out.write("Error: Unable to fetch valid data for the provided zip code")
 
 app = webapp2.WSGIApplication([('/', MainPage)], debug=True)
-    </code></pre>
+        </code></pre>
+    </div>
 </section>
 
 <!-- Step 4: Deploy to Google App Engine -->
