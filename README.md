@@ -121,10 +121,19 @@
     <th>Plugin</th>
     <th>README</th>
   </tr>
-  <tr>
+<tr>
     <td>Virtual Box Setup</td>
     <td><a href="ac/vm.html">vm.html</a></td>
 </tr>
+<tr>
+    <td>Virtual Box Setup</td>
+    <td><a href="ac/vm-c.html">VM-C-Program.html</a></td>
+</tr>
+<tr>
+    <td>Virtual Box Setup</td>
+    <td><a href="ac/vm-c.html">VM-C-Program.html</a></td>
+</tr>
+
 </table>
 
 </body>

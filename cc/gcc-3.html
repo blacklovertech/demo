@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Google App Engine Tutorial</title>
+</head>
+<body>
+
+<!-- Step 1: Download Python -->
+<section>
+    <h2>Step 1: Download Python</h2>
+    <p>Download and install the latest version of Python for Windows from the official website:</p>
+    <p><a href="http://www.python.org/downloads/">Download Python</a></p>
+</section>
+
+<!-- Step 2: Download Cloud SDK -->
+<section>
+    <h2>Step 2: Download Cloud SDK</h2>
+    <p>Download and install Cloud SDK for Windows by following the quickstart guide:</p>
+    <p><a href="https://cloud.google.com/sdk/docs/quickstart-windows">Download Cloud SDK</a></p>
+    <p>During installation, it will ask for your email account for verification.</p>
+</section>
+
+<!-- Step 3: Create YAML & Python File -->
+<section>
+    <h2>Step 3: Create YAML & Python File</h2>
+    <h3>3.1: Create app.yaml</h3>
+    <p>Create a YAML file using Notepad, type the following content and save it as "app.yaml":</p>
+    <pre><code>
+runtime: python27
+api_version: 1
+threadsafe: false
+handlers:
+- url: /
+  script: index.py
+    </code></pre>
+
+    <h3>3.2: Create index.py</h3>
+    <p>Create a Python file named "index.py" with the following content:</p>
+    <pre><code>
+print('Web service using Python code')
+print('Information Technology - SOC - KARE')
+    </code></pre>
+</section>
+
+<!-- Step 4: Open Google Cloud SDK Shell -->
+<section>
+    <h2>Step 4: Open Google Cloud SDK Shell</h2>
+    <p>Open "Google Cloud SDK Shell" from the Windows desktop.</p>
+</section>
+
+<!-- Step 5: Run Development Server -->
+<section>
+    <h2>Step 5: Run Development Server</h2>
+    <p>Run the following command in the Google Cloud SDK Shell:</p>
+    <pre><code>
+    cd C:\Users\sivak\AppData\Local\Google\Cloud SDK
+    google-cloud-sdk\bin\dev_appserver.py "E:\KARE\2023-2024\Even Semester\cloud computing\cloud lab"
+    </code></pre>
+    <p>Note:</p>
+    <ol>
+        <li><code>C:\Users\sivak\AppData\Local\Google\Cloud SDK&gt;</code> This is the current working directory in the command prompt. It shows that you are currently in the "Cloud SDK" directory.</li>
+        <li><code>google-cloud-sdk\bin\dev_appserver.py</code> This is the relative path to the dev_appserver.py script within the Google Cloud SDK directory. This script is used to run the development server for Google App Engine applications.</li>
+        <li><code>"E:\KARE\2023-2024\Even Semester\cloud computing\cloud lab"</code> This is the absolute path to your Google App Engine application directory. The application you want to serve using the development server is located in this directory.</li>
+    </ol>
+</section>
+
+<!-- Step 6: Open URL in Browser -->
+<section>
+    <h2>Step 6: Open URL in Browser</h2>
+    <p>Open an internet browser and type the following URL:</p>
+    <p><a href="http://localhost:8080/">http://localhost:8080/</a></p>
+</section>
+
+</body>
+</html>
