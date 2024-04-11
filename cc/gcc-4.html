@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google App Engine Deployment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h2 {
+            color: #333;
+        }
+        p {
+            margin-bottom: 10px;
+        }
+        pre {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: Consolas, monospace;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Step 1: Create app.yaml -->
+<section>
+    <h2>Step 1: Create app.yaml</h2>
+    <p>Create a file named <code>app.yaml</code> in your project directory with the following content:</p>
+    <pre><code>
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /.*
+  script: main.app
+
+libraries:
+- name: webapp2
+  version: "2.5.2"
+    </code></pre>
+</section>
+
+<!-- Step 2: Create HTML files -->
+<section>
+    <h2>Step 2: Create HTML files</h2>
+    <p>Create the following HTML files in your project directory:</p>
+    <ul>
+        <li>index.html<code>
+            <html>
+            <head></head>
+            <body>
+            <H1> Product Deliver Location </H1>
+            
+            <form class="Product" id="productform" action="/" method="post">
+             Location Zip Code:
+             <input  class="Product"
+                 id="productform"
+                 type="text"
+                 name="zipCode"  />
+             <br>
+            <input  class="Product"
+                 id="productform"
+                 type="submit"
+                 value="submit"  />
+            </form>
+            </body>
+            </html></code> with the form for location input.</li>
+        <li>results.html  for displaying location details.<code><!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Location Details</title>
+                <style>
+                    body {
+                        font-family: Arial, sans-serif;
+                        margin: 20px;
+                    }
+                    h1 {
+                        color: #333;
+                    }
+                    p {
+                        margin-bottom: 10px;
+                    }
+                    strong {
+                        font-weight: bold;
+                    }
+                </style>
+            </head>
+            <body>
+                <h1>Location Details</h1>
+            
+                {% if post_office %}
+                    <p><strong>Post Office:</strong> {{ post_office }}</p>
+                {% endif %}
+            
+                {% if Name %}
+                    <p><strong>Name:</strong> {{ Name }}</p>
+                {% endif %}
+            
+                {% if block %}
+                    <p><strong>Block:</strong> {{ block }}</p>
+                {% endif %}
+            
+                {% if District %}
+                    <p><strong>District:</strong> {{ District }}</p>
+                {% endif %}
+            
+                {% if not post_office and not Name and not block and not District %}
+                    <p>No data available for the provided zip code.</p>
+                {% endif %}
+            </body>
+            </html>
+        </code></li>
+    </ul>
+</section>
+
+<!-- Step 3: Create main.py -->
+<section>
+    <h2>Step 3: Create main.py</h2>
+    <p>Create a Python file named <code>main.py</code> with the following content:</p>
+    <pre><code>
+import urllib
+import webapp2
+import os
+import json
+from google.appengine.ext.webapp import template
+
+class MainPage(webapp2.RequestHandler):
+    def get(self):
+        path = os.path.join(os.path.dirname(__file__), "index.html")
+        context = {}
+        self.response.out.write(template.render(path, context))
+
+    def post(self):
+        pincode = self.request.get("zipCode")
+        url = "https://api.postalpincode.in/pincode/" + pincode
+        data_str = urllib.urlopen(url).read()
+
+        # Parse the JSON string into a Python dictionary
+        try:
+            data = json.loads(data_str)
+        except json.JSONDecodeError:
+            data = None
+
+        # Check if data is not empty before accessing elements
+        if data:
+            post_office = data[0]['PostOffice'][0]['State']
+            name = data[0]['PostOffice'][0]['Name']
+            block = data[0]['PostOffice'][0]['Block']
+            district = data[0]['PostOffice'][0]['District']
+
+            template_values = {
+                "post_office": post_office,
+                "Name": name,
+                "block": block,
+                "District": district
+            }
+
+            path = os.path.join(os.path.dirname(__file__), "results.html")
+            self.response.out.write(template.render(path, template_values))
+        else:
+            # Handle the case where data is empty or not a valid JSON
+            self.response.out.write("Error: Unable to fetch valid data for the provided zip code")
+
+app = webapp2.WSGIApplication([('/', MainPage)], debug=True)
+    </code></pre>
+</section>
+
+<!-- Step 4: Deploy to Google App Engine -->
+<section>
+    <h2>Step 4: Deploy to Google App Engine</h2>
+    <p>Deploy your application to Google App Engine using the following command in the Google Cloud SDK Shell:</p>
+    <pre><code>
+gcloud app deploy
+    </code></pre>
+</section>
+
+<!-- Step 5: Open URL in Browser -->
+<section>
+    <h2>Step 5: Open URL in Browser</h2>
+    <p>Open an internet browser and type the following URL:</p>
+    <p><a href="http://localhost:8080/">http://localhost:8080/</a></p>
+</section>
+
+
+</body>
+</html>
