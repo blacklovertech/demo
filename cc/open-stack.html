@@ -34,7 +34,7 @@
 <p>You need a clean Ubuntu server installation with sufficient resources (RAM, CPU, and disk space) and internet access.</p>
 
 <h2>2. Update System</h2>
-<code>sudo apt update</code>
+<code>sudo apt update</code><br>
 <code>sudo apt upgrade -y</code>
 
 <h2>3. Install Git</h2>
@@ -49,12 +49,12 @@
 <h2>6. Create a Local.conf File</h2>
 <p>Create a <code>local.conf</code> file in the <code>devstack</code> directory with your preferred configuration. Here's a minimal example:</p>
 <code>touch local.conf</code>
-<code>cat &lt;&lt;EOF &gt; local.conf
-[[local|localrc]]
-ADMIN_PASSWORD=secret
-DATABASE_PASSWORD=\$ADMIN_PASSWORD
-RABBIT_PASSWORD=\$ADMIN_PASSWORD
-SERVICE_PASSWORD=\$ADMIN_PASSWORD
+<code>cat &lt;&lt;EOF &gt; local.conf<br>
+[[local|localrc]]<br>
+ADMIN_PASSWORD=secret<br>
+DATABASE_PASSWORD=\$ADMIN_PASSWORD<br>
+RABBIT_PASSWORD=\$ADMIN_PASSWORD<br>
+SERVICE_PASSWORD=\$ADMIN_PASSWORD<br>
 EOF</code>
 
 <h2>7. Run Stack.sh</h2>
