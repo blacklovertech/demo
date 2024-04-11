@@ -36,13 +36,26 @@
     <td>Naive_Bayes</td>
     <td><a href="ml/Naive_Bayes.html">Naive_Bayes.html</a></td>
   </tr>
-  <tr>
-    <td>export</td>
-    <td><a href="ml/export.html">export.html</a></td>
-  </tr>
+
   <tr>
     <td>kmeans_final</td>
     <td><a href="ml/kmeans_final.html">kmeans_final.html</a></td>
+  </tr>
+    <tr>
+    <td>DBSCAN</td>
+    <td><a href="ml/DBSCAN.html">DBSCAN.html</a></td>
+  </tr>
+    <tr>
+    <td>PCA</td>
+    <td><a href="ml/pca.html">pca.html</a></td>
+  </tr>
+    <tr>
+    <td>SVM Final</td>
+    <td><a href="ml/svm_final.html">svm_final.html</a></td>
+  </tr>
+    <tr>
+    <td>SVM Visualization</td>
+    <td><a href="ml/svm_visualization.html">svm_visualization.html</a></td>
   </tr>
 </table>
 
@@ -152,6 +165,9 @@
 </tr>
 
 </table>
-
+  <tr>
+    <td>export</td>
+    <td><a href="ml/export.html">export.html</a></td>
+  </tr>
 </body>
 </html>
