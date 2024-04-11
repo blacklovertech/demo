@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transfer File Between Two VirtualBox Ubuntu Machines</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        h2 {
+            color: #555;
+        }
+        p {
+            margin-bottom: 10px;
+        }
+        code {
+            background-color: #f9f9f9;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-family: Consolas, monospace;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Transfer File Between Two VirtualBox Ubuntu Machines</h1>
+
+<h2>Step 1: Create VM-1 and VM-2</h2>
+<p>Create two VirtualBox Ubuntu VMs named "VM-1" and "VM-2" with suitable configurations.</p>
+
+<h2>Step 2: Start VM-1 and VM-2</h2>
+<p>Start both VM-1 and VM-2 in VirtualBox.</p>
+
+<h2>Step 3: Configure Networking</h2>
+<p>Ensure both VMs are using the same network mode in VirtualBox settings. You can choose either "NAT Network" or "Bridged Adapter".</p>
+
+<h2>Step 4: Obtain IP Addresses</h2>
+<p>In VM-1, open a terminal and run:</p>
+<code>ip addr show</code>
+<p>Note down the IP address of VM-1. Repeat the same process in VM-2 to obtain its IP address.</p>
+
+<h2>Step 5: Transfer File from VM-1 to VM-2</h2>
+<p>Assuming you have a file named "example.txt" on VM-1 that you want to transfer to VM-2:</p>
+<code>scp /path/to/example.txt username@VM2_IP:/path/to/destination</code>
+<p>Replace <code>/path/to/example.txt</code> with the path to the file on VM-1, <code>username</code> with your username on VM-2, <code>VM2_IP</code> with the IP address of VM-2, and <code>/path/to/destination</code> with the desired destination path on VM-2.</p>
+
+<p>After executing the command, you will be prompted to enter the password for your username on VM-2.</p>
+
+<h2>Step 6: Verify File Transfer</h2>
+<p>Once the transfer is complete, log in to VM-2 and navigate to the destination directory to verify that the file has been successfully transferred.</p>
+
+<p>With these steps, you should have successfully transferred a file from VM-1 to VM-2.</p>
+
+</body>
+</html>
