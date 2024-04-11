@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -73,7 +72,47 @@
     <td>First Order Logic (FOL)</td>
     <td><a href="ai/First_Order_Logic_(FOL)_.html">First_Order_Logic_(FOL)_.html</a></td>
   </tr>
-  <!-- Add other rows here -->
+  <tr>
+    <td>Multi Agent Environment – Chess board problem</td>
+    <td><a href="ai/Multi_Agent_Environment_–_Chess_board_problem_.html">Multi_Agent_Environment_–_Chess_board_problem_.html</a></td>
+</tr>
+<tr>
+    <td>Implementation of Alpha Beta Pruning</td>
+    <td><a href="ai/Implementation_of_Alpha_Beta_Pruning.html">Implementation_of_Alpha_Beta_Pruning.html</a></td>
+</tr>
+<tr>
+    <td>Wumpus World</td>
+    <td><a href="ai/Wumpus_World.html">Wumpus_World.html</a></td>
+</tr>
+<tr>
+    <td>Travel Sales Person</td>
+    <td><a href="ai/Travel_Sales_Person.html">Travel_Sales_Person.html</a></td>
+</tr>
+<tr>
+    <td>Map Coloring</td>
+    <td><a href="ai/Map_Coloring.html">Map_Coloring.html</a></td>
+</tr>
+<tr>
+    <td>Romania Map</td>
+    <td><a href="ai/Romania_Map.html">Romania_Map.html</a></td>
+</tr>
+<tr>
+    <td>Tic Tac Toe</td>
+    <td><a href="ai/Tic_Tac_Toe.html">Tic_Tac_Toe.html</a></td>
+</tr>
+<tr>
+    <td>8 Puzzle</td>
+    <td><a href="ai/8_Puzzle.html">8_Puzzle.html</a></td>
+</tr>
+<tr>
+    <td>8 Queen</td>
+    <td><a href="ai/8_queen.html">8_queen.html</a></td>
+</tr>
+<tr>
+    <td>vaccum_world</td>
+    <td><a href="ai/vaccum_world.html">vaccum_world.html</a></td>
+</tr>
+
 </table>
 
 <h2>Cloud Computing</h2>
@@ -82,7 +121,10 @@
     <th>Plugin</th>
     <th>README</th>
   </tr>
-  <!-- Add your Cloud Computing rows here -->
+  <tr>
+    <td>Virtual Box Setup</td>
+    <td><a href="ac/vm.html">vm.html</a></td>
+</tr>
 </table>
 
 </body>
