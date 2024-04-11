@@ -126,21 +126,29 @@
     <td><a href="cc/vm.html">vm.html</a></td>
 </tr>
 <tr>
-    <td>Virtual Box Setup</td>
+    <td>Execte C in VM</td>
     <td><a href="cc/vm-c.html">VM-C-Program.html</a></td>
 </tr>
 
 <tr>
-    <td>Virtual Box Setup</td>
+    <td>GCC - Print Kare</td>
     <td><a href="cc/gcc-3.html">GCC-3-Program.html</a></td>
 </tr>
 <tr>
-    <td>Virtual Box Setup</td>
+    <td>GCC - Delivery Location</td>
     <td><a href="cc/gcc-4.html">GCC-4-Program.html</a></td>
 </tr>
 <tr>
-    <td>Virtual Box Setup</td>
-    <td><a href="cc/gcc-4.html">GCC-4-Program.html</a></td>
+    <td>Transfer File B/W two VM's</td>
+    <td><a href="cc/file-transfer.html">file-transfer.html</a></td>
+</tr>
+<tr>
+    <td>Installing Open Stack in Private Cloud</td>
+    <td><a href="cc/open-stack.html">open-stack.html</a></td>
+</tr>
+<tr>
+    <td>Installing Hadoop in Pocket</td>
+    <td><a href="cc/hadoop.html">hadoop.html</a></td>
 </tr>
 
 </table>
