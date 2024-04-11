@@ -73,27 +73,15 @@ libraries:
             </form>
             </body>
             </html></code> with the form for location input.</li>
-        <li>results.html  for displaying location details.<code><!DOCTYPE html>
-            <html lang="en">
-            <head>
-                <meta charset="UTF-8">
-                <meta http-equiv="X-UA-Compatible" content="IE=edge">
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>Main HTML Page</title>
-            </head>
-            <body>
-            
-            <h1>Main HTML Page</h1>
-            
-            <iframe srcdoc="
-            <!DOCTYPE html>
-            <html lang=&quot;en&quot;>
-            <head>
-                <meta charset=&quot;UTF-8&quot;>
-                <meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;>
-                <meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
-                <title>Location Details</title>
-                <style>
+        <li>results.html  for displaying location details.<code>
+            &lt;!DOCTYPE html&gt;
+            &lt;html lang="en"&gt;
+            &lt;head&gt;
+                &lt;meta charset="UTF-8"&gt;
+                &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+                &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+                &lt;title&gt;Location Details&lt;/title&gt;
+                &lt;style&gt;
                     body {
                         font-family: Arial, sans-serif;
                         margin: 20px;
@@ -107,37 +95,32 @@ libraries:
                     strong {
                         font-weight: bold;
                     }
-                </style>
-            </head>
-            <body>
-                <h1>Location Details</h1>
+                &lt;/style&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+                &lt;h1&gt;Location Details&lt;/h1&gt;
             
                 {% if post_office %}
-                    <p><strong>Post Office:</strong> {{ post_office }}</p>
+                    &lt;p&gt;&lt;strong&gt;Post Office:&lt;/strong&gt; {{ post_office }}&lt;/p&gt;
                 {% endif %}
             
                 {% if Name %}
-                    <p><strong>Name:</strong> {{ Name }}</p>
+                    &lt;p&gt;&lt;strong&gt;Name:&lt;/strong&gt; {{ Name }}&lt;/p&gt;
                 {% endif %}
             
                 {% if block %}
-                    <p><strong>Block:</strong> {{ block }}</p>
+                    &lt;p&gt;&lt;strong&gt;Block:&lt;/strong&gt; {{ block }}&lt;/p&gt;
                 {% endif %}
             
                 {% if District %}
-                    <p><strong>District:</strong> {{ District }}</p>
+                    &lt;p&gt;&lt;strong&gt;District:&lt;/strong&gt; {{ District }}&lt;/p&gt;
                 {% endif %}
             
                 {% if not post_office and not Name and not block and not District %}
-                    <p>No data available for the provided zip code.</p>
+                    &lt;p&gt;No data available for the provided zip code.&lt;/p&gt;
                 {% endif %}
-            </body>
-            </html>
-            " style="width: 100%; height: 500px; border: none;"></iframe>
-            
-            </body>
-            </html>
-            
+            &lt;/body&gt;
+            &lt;/html&gt;
         </code></li>
     </ul>
 </section>
