@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Setting up Selenium with IntelliJ IDEA</title>
+</head>
+<body>
+    <ol>
+        <li>
+            <strong>Launch IntelliJ IDEA:</strong>
+            <ul>
+                <li>Open IntelliJ IDEA IDE on your system.</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Create a New Project:</strong>
+            <ul>
+                <li>Click on "File" in the menu.</li>
+                <li>Choose "New" and then "Project".</li>
+                <li>Select the type of project you want to create (for example, Java).</li>
+                <li>Click "Next".</li>
+                <li>Enter a name for your project.</li>
+                <li>Choose the project SDK (Java version).</li>
+                <li>Click "Finish".</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Add Selenium's .jar files as External Libraries:</strong>
+            <ul>
+                <li>Download the Selenium WebDriver Java bindings from the Selenium website or add the Selenium dependency to your Maven or Gradle project.</li>
+                <li>Once downloaded, extract the contents if necessary.</li>
+                <li>In IntelliJ IDEA, right-click on your project in the "Project" view.</li>
+                <li>Choose "Open Module Settings" or press "F4".</li>
+                <li>Click on "Libraries" under "Project Settings".</li>
+                <li>Click on the "+" button and select "Java".</li>
+                <li>Navigate to the location where you saved the Selenium WebDriver Java bindings.</li>
+                <li>Select the .jar files and click "OK" to add them as external libraries.</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Configure Maven as a Dependency Manager (Optional):</strong>
+            <ul>
+                <li>If you want to use Maven to manage dependencies (including Selenium), you can configure it in IntelliJ IDEA.</li>
+                <li>Open the "Project Structure" window again (File -> Project Structure or Ctrl+Alt+Shift+S).</li>
+                <li>Click on "Project" under "Project Settings".</li>
+                <li>Set the "Project SDK" and "Project language level" if not already set.</li>
+                <li>Click on "Modules" under "Project Settings".</li>
+                <li>Select your module and click on the "Dependencies" tab.</li>
+                <li>Click on the "+" button and select "1. From Maven".</li>
+                <li>Search for the Selenium dependency you want to add and click "OK" to add it to your project.</li>
+            </ul>
+        </li>
+    </ol>
+    <p>After completing these steps, you should be ready to start writing Selenium tests in IntelliJ IDEA. You can create new Java classes and start writing your Selenium WebDriver code to automate browser interactions.</p>
+    <br>
+    <br>
+        <h2>Initialize the Browser</h2>
+        <p>1.1 Initialize the Browser (Chrome/Firefox/Edge/IE11):</p>
+        <pre>// Initializing the browser driver
+    WebDriver driver = new ChromeDriver();</pre>
+        <p>1.2 Get the URL:</p>
+        <pre>// Navigating through a particular website
+    driver.get("https://www.codoid.com");</pre>
+        <h2>Browser Navigation</h2>
+        <p>2.1 Navigate to:</p>
+        <pre>driver.navigate().to("https://www.QA-Codoidian.com");</pre>
+        <p>2.2 Back, Forward, Refresh command:</p>
+        <pre>// Pressing the browser’s back button:
+    driver.navigate().back();
+    
+    // Pressing the browser’s forward button:
+    driver.navigate().forward();
+    
+    // Refresh the current page:
+    driver.navigate().refresh();</pre>
+        <h2>Get Browser Information</h2>
+        <p>3.1 Get title:</p>
+        <pre>// Read the current page title from the browser
+    driver.getTitle();</pre>
+        <p>3.2 Get Current URL:</p>
+        <pre>// Retrieve the current URL from the browser’s address bar
+    driver.getCurrentUrl();</pre>
+        <p>3.3 Get Page Source:</p>
+        <pre>// Get the current page source and it’ll return the string type
+    String strPageSource = driver.getPageSource();</pre>
+        <h2>FindElement vs FindElements</h2>
+        <p>i. Why do you need the Find Element command?</p>
+        <pre>// Interaction with a web page requires a user to locate the web element, and this command is used to uniquely identify a single web element in the current web page.
+    Example: driver.findElement(By.id("username"));</pre>
+        <p>ii. FindElements command:</p>
+        <pre>// FindElements command is used to uniquely identify the list of web elements within the web page.
+    Example: driver.findElements(By.id("name"));</pre>
+        <h2>Locator Strategies</h2>
+        <p>Traditional Locators:</p>
+        <ul>
+            <li>class name</li>
+            <li>id</li>
+            <li>name</li>
+            <li>link text</li>
+            <li>partial link text</li>
+            <li>tag name</li>
+            <li>xpath</li>
+            <li>css selector</li>
+        </ul>
+        <h2>Select</h2>
+        <pre>Select select = new Select(driver.findElement(By.xpath("//select[@name='Prog-Lang']")));
+    select.selectByVisibleText("JAVA");
+    Thread.sleep(2000);
+    select.selectByValue("Csharp");
+    Thread.sleep(2000);
+    select.selectByIndex(4);</pre>
+        <h2>XPath</h2>
+        <pre>//input[@placeholder='Password']
+    //input[@class='user_email']
+    Syntax:
+    //TAGNAME[@attribute='Attb.Value']
+    //h4[@class='notice-title']/a[text()='Apply Online']
+    //div[@class='Username_Field']/input
+    //div[@class='Password_repeat_Field']/input[@id='pass']</pre>
+        <h2>Link Text & Partial Link Text: Anchor TAG</h2>
+        <h2>WebElement txtEmailID = driver.findElement(By.xpath("//input[@class='user_email']"));</h2>
+        <pre>System.out.println("Before: "+txtEmailID.getAttribute("value"));
+    txtEmailID.sendKeys("yasin.codoid@gmail.com");
+    String strEmail = txtEmailID.getAttribute("value");
+    System.out.println("After: "+strEmail);</pre>
+        <h2>FindElements</h2>
+        <pre>List<WebElement> links = driver.findElements(By.xpath("//li[@class='notice']"));
+    System.out.println("SIZE: " + links.size());
+    // WAY-1:
+    for (int i = 0; i &lt; links.size(); i++) {
+       System.out.println(links.get(i).getText());
+    }
+    // WAY-2:
+    for (WebElement link : links) {
+       System.out.println(link.getText());
+    }</pre>
+        <h2>Actions</h2>
+        <pre>Actions action = new Actions(driver);
+    action.moveToElement(AccountHeader);
+    action.moveToElement(driver.findElement(By.xpath("//span[text()='Create a Wish List']")));
+    action.click();
+    action.build().perform();</pre>
+        <h2>Alert</h2>
+        <pre>System.out.println("-------> KLU");
+    WebDriver driver = new ChromeDriver();
+    driver.get("https://www.tnpsc.gov.in/");
+    Thread.sleep(3000);
+    driver.manage().window().maximize();
+    WebElement ApplyOnline = driver.findElement(By.xpath("//h4[@class='notice-title']/a[text()='Apply Online']"));
+    ApplyOnline.click();
+    String textValue = driver.switchTo().alert().getText();
+    Thread.sleep(5000);
+    driver.switchTo().alert().sendKeys("dfgh");
+    driver.switchTo().alert().accept();
+    System.out.println("--------->"+textValue);</pre>
+        <h2>Frames</h2>
+        <pre>public static void main(String[] args) throws InterruptedException {
+    System.out.println("-------> KLU");
+    WebDriver driver = new ChromeDriver();
+    driver.get("https://jqueryui.com/droppable/");
+    Thread.sleep(3000);
+    driver.manage().window().maximize();
+    WebElement frame = driver.findElement(By.xpath("//iframe[@class='demo-frame']"));
+    driver.switchTo().frame(frame);
+    WebElement DragBox = driver.findElement(By.id("draggable"));
+    WebElement drop = driver.findElement(By.id("droppable"));
+    Actions act = new Actions(driver);
+    act.dragAndDrop(DragBox, drop);
+    act.build().perform();
+    driver.switchTo().defaultContent();
+    WebElement SortLink = driver.findElement(By.xpath("//a[text()='Sortable']"));
+    SortLink.click();
+    }</pre>
+        <h2>Window Handling</h2>
+        <p>Please use the provided information into your HTML code.</p>
+    </body>
+    </html>
+    

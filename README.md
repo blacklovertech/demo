@@ -190,7 +190,13 @@
 </a>
 </td>
 </tr>
-
+<tr>
+<td>Sample Test code
+</td>
+<td>
+<a href="st/intellij.html">IntelliJ IDE</a>
+</td>
+</tr>
 </table>
 </body>
 </html>
