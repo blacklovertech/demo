@@ -179,10 +179,12 @@
 <table>
 <tr>
 <td>
+<td>INTELLIJ IDE</td>
 <a href="https://download-cdn.jetbrains.com/idea/ideaIC-2024.1.exe">InteliJ IDE</a>
 </td>
 </tr>
 <tr>
+<td>Selinium JAR</td>
 <td>
 <a href="https://github.com/SeleniumHQ/selenium/releases/download/selenium-4.19.0/selenium-server-4.19.1.jar">Selinium JAR File
 </a>
