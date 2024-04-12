@@ -177,9 +177,9 @@
 <h2>Software Testing</h2>
 
 <table>
-<tr>
+<tr><td>INTELLIJ IDE</td>
+
 <td>
-<td>INTELLIJ IDE</td>
 <a href="https://download-cdn.jetbrains.com/idea/ideaIC-2024.1.exe">InteliJ IDE</a>
 </td>
 </tr>
