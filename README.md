@@ -202,7 +202,7 @@
 Test Case Sample
 </td>
 <td>
-<a href="st/tc.html">Seleinum Testing CODE Java</a>
+<a href="st/tc.html">Sample Test Case</a>
 
 </td>
 </tr>
