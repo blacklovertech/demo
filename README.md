@@ -53,9 +53,13 @@
     <td>SVM Final</td>
     <td><a href="ml/svm_final.html">svm_final.html</a></td>
   </tr>
-    <tr>
+<tr>
     <td>SVM Visualization</td>
     <td><a href="ml/svm_visualization.html">svm_visualization.html</a></td>
+  </tr>
+  <tr>
+    <td>Data Set</td>
+    <td><a href="ml/data/">data set</a></td>
   </tr>
 </table>
 
@@ -166,8 +170,25 @@
 
 </table>
   <tr>
-    <td>export</td>
+    <td>EXPORT IPNY FILE</td>
     <td><a href="ml/export.html">export.html</a></td>
   </tr>
+
+<h2>Software Testing</h2>
+
+<table>
+<tr>
+<td>
+<a href="https://download-cdn.jetbrains.com/idea/ideaIC-2024.1.exe">InteliJ IDE</a>
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://github.com/SeleniumHQ/selenium/releases/download/selenium-4.19.0/selenium-server-4.19.1.jar">Selinium JAR File
+</a>
+</td>
+</tr>
+
+</table>
 </body>
 </html>
