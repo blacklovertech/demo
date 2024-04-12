@@ -194,7 +194,16 @@
 <td>Sample Test code
 </td>
 <td>
-<a href="st/intellij.html">IntelliJ IDE</a>
+<a href="st/intellij.html">Seleinum Testing CODE Java</a>
+</td>
+</tr>
+<tr>
+<td>
+Test Case Sample
+</td>
+<td>
+<a href="st/tc.html">Seleinum Testing CODE Java</a>
+
 </td>
 </tr>
 </table>
