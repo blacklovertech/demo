@@ -205,6 +205,10 @@ Test Case Sample
 <a href="st/tc.html">Sample Test Case</a>
 
 </td>
+<td>
+<a href="st/tcplan.html">Sample Test Plan</a>
+
+</td>
 </tr>
 </table>
 </body>
